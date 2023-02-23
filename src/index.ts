@@ -103,7 +103,7 @@ export default class BIP {
   }
 
   sub(other: BIP): BIP {
-    const difference = this.#scaled.difference(toBN(other));
+    const difference = this.#scaled.sub(toBN(other));
     return toBIP(difference);
   }
 
