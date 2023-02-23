@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/mattvioli/bigint-precision/compare/v1.1.0...v1.1.1) (2023-02-23)
+
+
+### Bug Fixes
+
+* update release type ([#10](https://github.com/mattvioli/bigint-precision/issues/10)) ([df3c744](https://github.com/mattvioli/bigint-precision/commit/df3c744a9de571df695b6f108a46a720670b9537))
+
 ## [1.1.0](https://github.com/mattvioli/bigint-precision/compare/v1.0.0...v1.1.0) (2023-02-23)
 
 
