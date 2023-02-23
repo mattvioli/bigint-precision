@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/mattvioli/bigint-precision/compare/v1.1.1...v1.2.0) (2023-02-23)
+
+
+### Features
+
+* add fromNumber ([#18](https://github.com/mattvioli/bigint-precision/issues/18)) ([76f0228](https://github.com/mattvioli/bigint-precision/commit/76f02284b0f8baf19cedaacfee19f866b52af201))
+
+
+### Bug Fixes
+
+* add lib into main path ([#16](https://github.com/mattvioli/bigint-precision/issues/16)) ([dc681ae](https://github.com/mattvioli/bigint-precision/commit/dc681ae286fed2c70d93a7a0364f5d695c0a44fe))
+* parse scientific numbers on string ([#19](https://github.com/mattvioli/bigint-precision/issues/19)) ([3f65d0f](https://github.com/mattvioli/bigint-precision/commit/3f65d0f374431d01c8d3920996322f345a50ffec))
+
 ## [1.1.1](https://github.com/mattvioli/bigint-precision/compare/v1.1.0...v1.1.1) (2023-02-23)
 
 
