@@ -1,5 +1,5 @@
 import { BN } from "@project-serum/anchor";
-import parseScientific from "./utils/parseScientific";
+import parseScientific, { checkScientific } from "./utils/parseScientific";
 
 type FormatLocale = "de-DE" | "en-US";
 
@@ -36,7 +36,7 @@ const FORMATS: { [key: string]: FormatType } = {
   },
 };
 
-const INTERNAL_SCALE = 21n;
+const INTERNAL_SCALE = 33n;
 
 const SCALE_FOR_MULTI_DIVI = new BN(`${10n ** INTERNAL_SCALE}`);
 
@@ -66,14 +66,26 @@ export default class BIP {
   static from(value: bigint, exponent: bigint = 0n): BIP {
     return new BIP(value, exponent);
   }
-  static fromNumber(value: number): BIP {
+  static fromNumber(value: number | string): BIP {
     if (Number.isInteger(value)) return new BIP(BigInt(value));
     // split number into whole and fractional
-    const whole = Math.trunc(value);
-    const fractional = value.toString().split(".")[1];
-    const exponent = BigInt(fractional.length);
-    const bigInt = BigInt(`${whole}${fractional}`);
-    return new BIP(bigInt, exponent);
+    if (typeof value === "number") {
+      const [whole, fractional] = value.toString().split(".");
+      const exponent = BigInt(fractional.length);
+      const bigInt = BigInt(`${whole}${fractional}`);
+      return new BIP(bigInt, exponent);
+    }
+    if (checkScientific(value)) {
+      const parsed = parseScientific(value);
+      if (Number.isInteger(Number(parsed))) return new BIP(BigInt(parsed));
+      const [whole, fractional] = parsed.toString().split(".");
+      const exponent = BigInt(fractional.length);
+      const bigInt = BigInt(`${whole}${fractional}`);
+      return new BIP(bigInt, exponent);
+    }
+    throw new Error(
+      "You have entered a value that isn't a number or scientific notation"
+    );
   }
 
   unscale(precision: bigint): bigint {

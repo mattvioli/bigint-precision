@@ -22,6 +22,16 @@ BIP.from(3_141590n, 6n)
 
 <sup>We add \_ as it's an easier visual cue to track it</sup>
 
+## fromNumber
+
+.fromNumber can take a whole number, floating point or evemn scientific notation as an input and allow you to perform big maths on it.
+
+```
+BIP.fromNumber(20000)
+BIP.fromNumber(20.12221)
+BIP.fromNumber("1.2112222222222222e+22");
+```
+
 ## Return the value
 
 To return the value after applying some maths, we have the following options.

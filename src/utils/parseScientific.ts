@@ -1,8 +1,15 @@
-// This was taken directly from https://gist.github.com/jiggzson/b5f489af9ad931e3d186?permalink_comment_id=3723670#gistcomment-3723670
+// This was taken from https://gist.github.com/jiggzson/b5f489af9ad931e3d186?permalink_comment_id=3723670#gistcomment-3723670
+
+export function checkScientific(num: string) {
+  if (/\d+\.?\d*e[+-]*\d+/i.test(num)) {
+    return true;
+  }
+  return false;
+}
 
 export default function parseScientific(num: string): string {
   // If the number is not in scientific notation return it as it is.
-  if (!/\d+\.?\d*e[+-]*\d+/i.test(num)) {
+  if (!checkScientific(num)) {
     return num;
   }
 
