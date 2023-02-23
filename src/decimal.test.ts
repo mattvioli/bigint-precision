@@ -85,4 +85,12 @@ describe("the BIP class", () => {
     const quotient = dividend.div(divisor).unscale(18n);
     expect(quotient).toBe(3_141592653591053677n);
   });
+
+  it("does not output scientific notification on toString", () => {
+    const multiplicand = BIP.from(300_00000n, 5n);
+    const product = multiplicand
+      .mul(BIP.from(500000000012121212120n))
+      .toString();
+    expect(product).toEqual("150000000003636370000000");
+  });
 });
