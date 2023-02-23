@@ -13,7 +13,6 @@ jobs:
           release-type: simple
           package-name: bigint-precision
           token: ${{ secrets.GITHUB_TOKEN }}
-
       - uses: actions/checkout@v3
         if: ${{ steps.release.outputs.release_created }}
       - uses: actions/setup-node@v1
