@@ -60,4 +60,29 @@ describe("the BIP class", () => {
       "1,000,000.111111"
     );
   });
+
+  it("ensures values can be created from number", () => {
+    expect(BIP.fromNumber(100).unscale(18n)).toBe(100n * 10n ** 18n);
+    expect(BIP.fromNumber(1.0).unscale(4n)).toBe(1n * 10n ** 4n);
+  });
+
+  it("ensures that maths can be used fromNumber", () => {
+    const summands = BIP.fromNumber(2);
+    const sum = summands.add(BIP.fromNumber(1.14159)).unscale(5n);
+    expect(sum).toEqual(3_14159n);
+
+    const minuend = BIP.fromNumber(10.0);
+    const difference = minuend.sub(BIP.fromNumber(6.8584)).unscale(4n);
+    expect(difference).toEqual(3_1416n);
+
+    const multiplicand = BIP.fromNumber(300.0);
+    const product = multiplicand.mul(BIP.fromNumber(5)).unscale(2n);
+    expect(product).toEqual(150000n);
+
+    // https://mathworld.wolfram.com/PiApproximations.html
+    const dividend = BIP.fromNumber(8405139762.0);
+    const divisor = BIP.fromNumber(2675439081);
+    const quotient = dividend.div(divisor).unscale(18n);
+    expect(quotient).toBe(3_141592653591053677n);
+  });
 });

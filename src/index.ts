@@ -65,6 +65,15 @@ export default class BIP {
   static from(value: bigint, exponent: bigint = 0n): BIP {
     return new BIP(value, exponent);
   }
+  static fromNumber(value: number): BIP {
+    if (Number.isInteger(value)) return new BIP(BigInt(value));
+    // split number into whole and fractional
+    const whole = Math.trunc(value);
+    const fractional = value.toString().split(".")[1];
+    const exponent = BigInt(fractional.length);
+    const bigInt = BigInt(`${whole}${fractional}`);
+    return new BIP(bigInt, exponent);
+  }
 
   unscale(precision: bigint): bigint {
     const diff = INTERNAL_SCALE - precision;
