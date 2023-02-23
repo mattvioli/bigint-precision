@@ -1,4 +1,5 @@
 import { BN } from "@project-serum/anchor";
+import parseScientific from "./utils/parseScientific";
 
 type FormatLocale = "de-DE" | "en-US";
 
@@ -87,7 +88,7 @@ export default class BIP {
 
   toString(): string {
     const unscaledNumber = toBIP(this.#scaled).toNumber();
-    return `${unscaledNumber}`;
+    return parseScientific(`${unscaledNumber}`);
   }
 
   toFormat(locale: FormatType, fractionalLength: number = 8): string {
