@@ -93,4 +93,22 @@ describe("the BIP class", () => {
       .toString();
     expect(product).toEqual("150000000003636370000000");
   });
+
+  it("ensures that scientific notation can be used with fromNumber with a floating point number", () => {
+    const summands = BIP.fromNumber("1.2112222222222222e+22");
+    const sum = summands.add(BIP.fromNumber(1.14159)).unscale(23n);
+    expect(sum).toEqual(1211222222222222200000114159000000000000000000n);
+  });
+
+  it("ensures that scientific notation can be used with fromNumber with a whole number", () => {
+    const summands = BIP.fromNumber("2e+2");
+    const sum = summands.add(BIP.fromNumber(1.14159)).unscale(23n);
+    expect(sum).toEqual(20114159000000000000000000n);
+  });
+
+  // it("throws error if fromNumber is not number or scientific notation", () => {
+  //   expect(BIP.fromNumber("value")).toThrowError(
+  //     "You have entered a value that isn't a number or scientific notation"
+  //   );
+  // });
 });
