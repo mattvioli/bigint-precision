@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.0](https://github.com/mattvioli/bigint-precision/compare/v1.2.0...v1.3.0) (2023-02-23)
+
+
+### Features
+
+* allow fromNumber to take scientific notation ([#22](https://github.com/mattvioli/bigint-precision/issues/22)) ([8171c11](https://github.com/mattvioli/bigint-precision/commit/8171c112c221e2995071cfb8ca52c4c88df4a253))
+* remove anchor dependency ([#24](https://github.com/mattvioli/bigint-precision/issues/24)) ([96c6299](https://github.com/mattvioli/bigint-precision/commit/96c6299feaaf90fa66674a8d581e8d94c9af535e))
+
 ## [1.2.0](https://github.com/mattvioli/bigint-precision/compare/v1.1.1...v1.2.0) (2023-02-23)
 
 
