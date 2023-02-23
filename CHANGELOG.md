@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/mattvioli/bigint-precision/compare/v1.0.0...v1.1.0) (2023-02-23)
+
+
+### Features
+
+* add installation to readme ([#8](https://github.com/mattvioli/bigint-precision/issues/8)) ([85829f2](https://github.com/mattvioli/bigint-precision/commit/85829f2c6a16347abd2582488c6100910b7a26de))
+
 ## 1.0.0 (2023-02-23)
 
 
