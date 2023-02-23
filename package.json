@@ -18,11 +18,13 @@
   },
   "homepage": "https://github.com/mattvioli/bigint-precision#readme",
   "devDependencies": {
-    "@project-serum/anchor": "^0.23.0",
     "@types/jest": "^29.4.0",
     "jest": "^29.4.3",
     "ts-jest": "^29.0.5",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.9.5"
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "typescript": "^4.9.5",
+    "bn.js": "^5.2.1"
   }
 }
