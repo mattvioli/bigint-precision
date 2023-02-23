@@ -98,24 +98,24 @@ export default class BIP {
   }
 
   add(other: BIP): BIP {
-    const added = this.#scaled.add(toBN(other));
-    return toBIP(added);
+    const sum = this.#scaled.add(toBN(other));
+    return toBIP(sum);
   }
 
   sub(other: BIP): BIP {
-    const sub = this.#scaled.sub(toBN(other));
-    return toBIP(sub);
+    const difference = this.#scaled.sub(toBN(other));
+    return toBIP(difference);
   }
 
   mul(other: BIP): BIP {
-    const multi = this.#scaled.mul(toBN(other));
-    const demulti = multi.div(SCALE_FOR_MULTI_DIVI);
-    return toBIP(demulti);
+    const product = this.#scaled.mul(toBN(other));
+    const deScaledProduct = product.div(SCALE_FOR_MULTI_DIVI);
+    return toBIP(deScaledProduct);
   }
 
   div(other: BIP): BIP {
-    const mult = this.#scaled.mul(SCALE_FOR_MULTI_DIVI);
-    const divi = mult.div(toBN(other));
-    return toBIP(divi);
+    const scaledProduct = this.#scaled.mul(SCALE_FOR_MULTI_DIVI);
+    const quotient = scaledProduct.div(toBN(other));
+    return toBIP(quotient);
   }
 }
