@@ -1,4 +1,4 @@
-import { BN } from "@project-serum/anchor";
+import BN from "bn.js";
 import parseScientific, { checkScientific } from "./utils/parseScientific";
 
 type FormatLocale = "de-DE" | "en-US";
