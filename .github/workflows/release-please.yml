@@ -11,7 +11,7 @@ jobs:
         id: release
         uses: google-github-actions/release-please-action@v3
         with:
-          release-type: simple
+          release-type: node
           package-name: bigint-precision
           token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions/checkout@v3
