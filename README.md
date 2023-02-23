@@ -2,6 +2,12 @@
 
 This is to ensure precision on decimals for BigInt maths.
 
+## Installation
+
+```
+  npm install bigint-precision
+```
+
 ## How to construct a BIP class.
 
 Instead of using the new constructor, we favour using the .from()
