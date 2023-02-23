@@ -1,6 +1,6 @@
 {
   "name": "bigint-precision",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "This is to ensure precision on decimals for BigInt maths.",
   "main": "lib/index.js",
   "scripts": {
